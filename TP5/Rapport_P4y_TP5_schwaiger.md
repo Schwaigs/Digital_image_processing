@@ -24,7 +24,7 @@ Voici ci-dessous une illustration de l'effet de notre filtre résultant d'un tes
 
 | Bruit impulsionnel de 15% | Débruitage avec filtre médian de taille 3 | Débruitage avec f filtre médian de taille 7 |
 |:-------------------------:|:-----------------------------------------:|:-------------------------------------------:|
-| <img  src ="./images/grumpy_impuls_15%.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15%_median_3.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15%_median_7.png"  style =" width:300px; "/> |
+| <img  src ="./images/grumpy_impuls_15.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15_median_3.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15_median_7.png"  style =" width:300px; "/> |
 
 &nbsp;
 _____________________
@@ -49,7 +49,7 @@ Le résultat donné par notre fonction de bruit impulsionnel se trouve ci-dessou
 
 | Image originale | Bruit impulsionnel de 15% | Bruit impulsionnel de 40% |
 |:-----------:|:------------:|:---------------:|
-| <img  src ="./images/grumpy.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15%.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_40%.png"  style =" width:300px; "/> |
+| <img  src ="./images/grumpy.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_40.png"  style =" width:300px; "/> |
 
 &nbsp;
 
@@ -129,8 +129,8 @@ En premier lieu, voici des tableaux récapitulant toutes les images générées 
 
 |  | Image bruitée | Image débruitée : taille 3 | Image débruitée : taille 7 |
 |:--:|:--:|:--:|:--:|
-|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15%.png) | ![img](./images/grumpy_impuls_15%_median_3.png) | ![img](./images/grumpy_impuls_15%_median_7.png)| 
-|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40%.png) | ![img](./images/grumpy_impuls_40%_median_3.png) | ![img](./images/grumpy_impuls_40%_median_7.png) |
+|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15.png) | ![img](./images/grumpy_impuls_15_median_3.png) | ![img](./images/grumpy_impuls_15_median_7.png)| 
+|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40.png) | ![img](./images/grumpy_impuls_40_median_3.png) | ![img](./images/grumpy_impuls_40_median_7.png) |
 |**Bruit gaussien σ=15**| ![img](./images/grumpy_gauss_mu0_sigma15.png) | ![img](./images/grumpy_gauss_mu0_sigma15_median_3.png) | ![img](./images/grumpy_gauss_mu0_sigma15_median_7.png) |
 |**Bruit gaussien σ=30**| ![img](./images/grumpy_gauss_mu0_sigma30.png) | ![img](./images/grumpy_gauss_mu0_sigma30_median_3.png) | ![img](./images/grumpy_gauss_mu0_sigma30_median_7.png) |
 
@@ -140,8 +140,8 @@ En premier lieu, voici des tableaux récapitulant toutes les images générées 
 
 |  | Image bruitée | Image débruitée : taille 3 | Image débruitée : taille 7 |
 |:--:|:--:|:--:|:--:|
-|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15%.png) | ![img](./images/grumpy_impuls_15%_filtre_moyenneur_N3.png) |![img](./images/grumpy_impuls_15%_filtre_moyenneur_N7.png) |
-|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40%.png) | ![img](./images/grumpy_impuls_40%_filtre_moyenneur_N3.png) |![img](./images/grumpy_impuls_40%_filtre_moyenneur_N7.png) |
+|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15.png) | ![img](./images/grumpy_impuls_15_filtre_moyenneur_N3.png) |![img](./images/grumpy_impuls_15_filtre_moyenneur_N7.png) |
+|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40.png) | ![img](./images/grumpy_impuls_40_filtre_moyenneur_N3.png) |![img](./images/grumpy_impuls_40_filtre_moyenneur_N7.png) |
 |**Bruit gaussien σ=15**| ![img](./images/grumpy_gauss_mu0_sigma15.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_moyenneur_N3.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_moyenneur_N7.png) |
 |**Bruit gaussien σ=30**| ![img](./images/grumpy_gauss_mu0_sigma30.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_moyenneur_N3.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_moyenneur_N7.png) |
 
@@ -151,8 +151,8 @@ En premier lieu, voici des tableaux récapitulant toutes les images générées 
 
 |  | Image bruitée | Image débruitée : σ=1 | Image débruitée : σ=2 |
 |:--:|:--:|:--:|:--:|
-|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15%.png) | ![img](./images/grumpy_impuls_15%_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_impuls_15%_filtre_gauss_sigma_2.png) |
-|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40%.png) | ![img](./images/grumpy_impuls_40%_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_impuls_40%_filtre_gauss_sigma_2.png) |
+|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15.png) | ![img](./images/grumpy_impuls_15_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_impuls_15_filtre_gauss_sigma_2.png) |
+|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40.png) | ![img](./images/grumpy_impuls_40_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_impuls_40_filtre_gauss_sigma_2.png) |
 |**Bruit gaussien σ=15**| ![img](./images/grumpy_gauss_mu0_sigma15.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_gauss_sigma_2.png) |
 |**Bruit gaussien σ=30**| ![img](./images/grumpy_gauss_mu0_sigma30.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_gauss_sigma_2.png) |
 
