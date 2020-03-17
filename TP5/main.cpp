@@ -70,7 +70,7 @@ int main(int argc, const char * argv[]) {
         }
 
         default:{
-            std::cout << "Pas de programme pour " << argv[1] << " ! Programmes possibles : median, impuls, gauss et mse\n";
+            std::cout << "Pas de programme pour " << argv[1] << " ! Programmes possibles : 1 : median, 2 : impuls, 3 : gauss et 4 : mse \n";
             exit(EXIT_FAILURE);
         }
 
