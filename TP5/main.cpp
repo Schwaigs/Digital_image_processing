@@ -10,13 +10,17 @@
 
 int main(int argc, const char * argv[]) {
 
+    //Si l'utilisateur n'as mis aucun argument en plus de ./main 
+    //on lui affiche les différents programmes diponibles avec leurs identifiants à rentrer
     if(argc < 2) {
         std::cout << "Arguments manquant ! Programmes possibles : 1 : median, 2 : impuls, 3 : gauss et 4 : mse \n";
         exit(EXIT_FAILURE);
     }
 
+    //choix de la fonctionnalité à effectuer selon l'identifiant en 2e argument
     switch(atoi(argv[1])){
 
+        //On applique un filtre median
         case 1: {
             if(argc !=5) {
                 std::cout << "Usage : " << argv[0] << " 1 <input.pgm> <output.pgm> <filter_size>\n";
@@ -30,6 +34,7 @@ int main(int argc, const char * argv[]) {
             break;
         }
 
+        //on génère du bruit impulsionnel
         case 2: {
             if(argc !=5) {
                 std::cout << "Usage : " << argv[0] << " 2 <input.pgm> <output.pgm> <probability>\n";
@@ -43,6 +48,7 @@ int main(int argc, const char * argv[]) {
             break;
         }
 
+        //on génère du bruit gaussien
         case 3: {
             if(argc !=6) {
                 std::cout << "Usage : " << argv[0] << " 3 <input.pgm> <output.pgm> <mu> <sigma>\n";
@@ -57,6 +63,7 @@ int main(int argc, const char * argv[]) {
             break;
         }
 
+        //on calcule le MSE de deux images
         case 4: {
             if(argc !=4) {
                 std::cout << "Usage : " << argv[0] << " 4 <image1.pgm> <image2.pgm>\n";
@@ -69,6 +76,7 @@ int main(int argc, const char * argv[]) {
             break;
         }
 
+        //Si l'utilisateur a tapé autre chose on lui affiche les différents programmes diponibles avec leurs identifiants à rentrer
         default:{
             std::cout << "Pas de programme pour " << argv[1] << " ! Programmes possibles : 1 : median, 2 : impuls, 3 : gauss et 4 : mse \n";
             exit(EXIT_FAILURE);
