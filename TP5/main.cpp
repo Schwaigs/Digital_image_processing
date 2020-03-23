@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
                 std::cout << "Usage : " << argv[0] << " 2 <input.pgm> <output.pgm> <probability>\n";
                 exit(EXIT_FAILURE);
             }
-
+            std::cout << "  test \n";
             const char * entree = argv[2];
             const char * sortie = argv[3];
             double p = atof(argv[4]);

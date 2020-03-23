@@ -20,6 +20,17 @@ Une fois les valeurs de tous nos voisins récupérés pour le pixel courant, on 
 
 Enfin, on récupère la médiane des valeurs voisines pour en faire la nouvelle valeur à notre pixel et on vide notre vecteur pour passer au prochain point de l'image.
 
+Pour les tests de mes fonctions j'ai souhaité partir de très petites images pgm écrites par moi-même. Pour le filtre médian par exemple, je souhaitais calculer le résultat attendu à la main, puis vérifier le résultat obtenu en comparant les valeurs écrites dans le pgm de sortie. De même, pour le bruit impulsionnel, je souhaitais voir si la proportion de pixels corrompus était acceptable en vérifiant qu'elle est proche de la probabilité entrée.
+
+J'ai donc tenter de créer mes propres pgm, mais je me suis alors rendu compte que les fonctions readPGM et writePGM traitent des pgm en P5, c'est-à-dire en binaire. En effet, en travaillant en P2 (ascii), mes images de sorties étaient vides, et en tentant d'afficher les Dx et Dy de mon image d'entrée les valeurs étaient de 0. L'image dont j'étais partie était la suivante :
+
+<img  src ="./images/test_P2_100.png"  style =" width:400px; "/>
+
+J'ai alors modifié mon image pour en créer une en binaire, j'ai voulu associer aux pixels une valeur simple codée sur un seul octet pour faciliter l'écriture. J'ai ainsi écrit l'image ci-dessous qui est censée être unie puisque chaque pixel possède la même valeur. Pourtant, comme on peut le voir juste à côté, une fois ouverte sur ImageJ, certains pixels sont plus foncés.
+
+<img  src ="./images/test_P5.png"  style =" width:600px; "/><img  src ="./images/test_P5_result.png"  style =" width:200px; "/>
+
+Je n'ai donc pas pu effectuer mes tests comme je le voulais. C'est pourquoi j'ai simplement verifié à l'aide des images en exemples du cours que les images que je traitais avaient un résultat similaire à ce qui était attendu.
 Voici ci-dessous une illustration de l'effet de notre filtre résultant d'un test demandé plus bas.
 
 | Bruit impulsionnel de 15% | Débruitage avec filtre médian de taille 3 | Débruitage avec f filtre médian de taille 7 |

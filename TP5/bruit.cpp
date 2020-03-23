@@ -12,6 +12,7 @@ void bruit_impuls(const char * nom_img_entree, const char *  nom_img_sortie, dou
 
     Image<uint8_t> image=readPGM(nom_img_entree);
     Image<uint8_t> image_sortie = Image<uint8_t>(image.getDx(),image.getDy());
+    std::cout << "Dx = " << image.getDx() << "  Dy = " << image.getDy() << "\n";
 
     //parcours des pixels de l'image
     for (int j = 0; j < image.getDy(); j++){
@@ -42,7 +43,7 @@ void bruit_impuls(const char * nom_img_entree, const char *  nom_img_sortie, dou
                 image_sortie(i,j) = image(i,j);
             }
 
-            //std::cout << "  val [ " << i << " , " << j << " ]  départ = " << (int)image(i,j) << " random = " << random << " sortie = " << (int)image_sortie(i,j) << "\n";
+            std::cout << "  val [ " << i << " , " << j << " ]  départ = " << (int)image(i,j) << " random = " << random << " sortie = " << (int)image_sortie(i,j) << "\n";
 
         }
     }
