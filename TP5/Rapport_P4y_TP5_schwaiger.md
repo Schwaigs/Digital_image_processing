@@ -24,11 +24,11 @@ Pour les tests de mes fonctions j'ai souhaité partir de très petites images pg
 
 J'ai donc tenter de créer mes propres pgm, mais je me suis alors rendu compte que les fonctions readPGM et writePGM traitent des pgm en P5, c'est-à-dire en binaire. En effet, en travaillant en P2 (ascii), mes images de sorties étaient vides, et en tentant d'afficher les Dx et Dy de mon image d'entrée les valeurs étaient de 0. L'image dont j'étais partie était la suivante :
 
-<img  src ="./images/test_P2_100.png"  style =" width:400px; "/>
+<img  src ="./images/test_P2_100.png"  style =" width:300px; "/>
 
 J'ai alors modifié mon image pour en créer une en binaire, j'ai voulu associer aux pixels une valeur simple codée sur un seul octet pour faciliter l'écriture. J'ai ainsi écrit l'image ci-dessous qui est censée être unie puisque chaque pixel possède la même valeur. Pourtant, comme on peut le voir juste à côté, une fois ouverte sur ImageJ, certains pixels sont plus foncés.
 
-<img  src ="./images/test_P5.png"  style =" width:600px; "/><img  src ="./images/test_P5_result.png"  style =" width:200px; "/>
+<img  src ="./images/test_P5.png"  style =" width:350px; "/><img  src ="./images/test_P5_result.png"  style =" width:150px; "/>
 
 Je n'ai donc pas pu effectuer mes tests comme je le voulais. C'est pourquoi j'ai simplement verifié à l'aide des images en exemples du cours que les images que je traitais avaient un résultat similaire à ce qui était attendu.
 Voici ci-dessous une illustration de l'effet de notre filtre résultant d'un test demandé plus bas.
