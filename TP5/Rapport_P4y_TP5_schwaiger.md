@@ -28,7 +28,9 @@ J'ai donc tenter de créer mes propres pgm, mais je me suis alors rendu compte q
 
 J'ai alors modifié mon image pour en créer une en binaire, j'ai voulu associer aux pixels une valeur simple codée sur un seul octet pour faciliter l'écriture. J'ai ainsi écrit l'image ci-dessous qui est censée être unie puisque chaque pixel possède la même valeur. Pourtant, comme on peut le voir juste à côté, une fois ouverte sur ImageJ, certains pixels sont plus foncés.
 
-<img  src ="./images/test_P5.png"  style =" width:350px; "/><img  src ="./images/test_P5_result.png"  style =" width:150px; "/>
+| PGM de test version IDE | PGM de test version image |
+|:-----------------------:|:-------------------------:|
+|<img  src ="./images/test_P5.png"  style =" width:350px; "/>|<img  src ="./images/test_P5_result.png"  style =" width:150px; "/>|
 
 Je n'ai donc pas pu effectuer mes tests comme je le voulais. C'est pourquoi j'ai simplement verifié à l'aide des images en exemples du cours que les images que je traitais avaient un résultat similaire à ce qui était attendu.
 Voici ci-dessous une illustration de l'effet de notre filtre résultant d'un test demandé plus bas.
