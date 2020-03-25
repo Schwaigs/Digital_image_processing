@@ -195,5 +195,4 @@ Enfin voici le tableau des différents MSE représentant la disparité de chaque
 | **Bruit gaussien σ=30**    | 830  | 216  | 171 | 161  | 198  | **133**  | 164  |
 
 *Note : bon rapport, code correct (à part la lecture/écriture pgm dans les fonctions)
-Vous auriez pu commenter un peu plus les résultats et ajouter plus d'images de tests, notamment pour les cas limites.
-*
+Vous auriez pu commenter un peu plus les résultats et ajouter plus d'images de tests, notamment pour les cas limites.*
