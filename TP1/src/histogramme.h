@@ -1,0 +1,1 @@
+void histogramme(Image<uint8_t> image, int* histo);

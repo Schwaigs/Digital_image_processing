@@ -24,26 +24,20 @@ Pour les tests de mes fonctions j'ai souhaité partir de très petites images pg
 
 J'ai donc tenter de créer mes propres pgm, mais je me suis alors rendu compte que les fonctions readPGM et writePGM traitent des pgm en P5, c'est-à-dire en binaire. En effet, en travaillant en P2 (ascii), mes images de sorties étaient vides, et en tentant d'afficher les Dx et Dy de mon image d'entrée les valeurs étaient de 0. L'image dont j'étais partie était la suivante :
 
-<img  src ="./images/test_P2_100.png"  style =" width:300px; "/>
+<img  src ="./img/test_P2_100.png"  style =" width:300px; "/>
 
 J'ai alors modifié mon image pour en créer une en binaire, j'ai voulu associer aux pixels une valeur simple codée sur un seul octet pour faciliter l'écriture. J'ai ainsi écrit l'image ci-dessous qui est censée être unie puisque chaque pixel possède la même valeur. Pourtant, comme on peut le voir juste à côté, une fois ouverte sur ImageJ, certains pixels sont plus foncés.
 
 | PGM de test version IDE | PGM de test version image |
 |:-----------------------:|:-------------------------:|
-|<img  src ="./images/test_P5.png"  style =" width:350px; "/>|<img  src ="./images/test_P5_result.png"  style =" width:150px; "/>|
+|<img  src ="./img/test_P5.png"  style =" width:350px; "/>|<img  src ="./img/test_P5_result.png"  style =" width:150px; "/>|
 
 Je n'ai donc pas pu effectuer mes tests comme je le voulais. C'est pourquoi j'ai simplement verifié à l'aide des images en exemples du cours que les images que je traitais avaient un résultat similaire à ce qui était attendu.
 Voici ci-dessous une illustration de l'effet de notre filtre résultant d'un test demandé plus bas.
 
 | Bruit impulsionnel de 15% | Débruitage avec filtre médian de taille 3 | Débruitage avec f filtre médian de taille 7 |
 |:-------------------------:|:-----------------------------------------:|:-------------------------------------------:|
-| <img  src ="./images/grumpy_impuls_15.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15_median_3.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15_median_7.png"  style =" width:300px; "/> |
-
-*Note : le format de votre image n'est pas bon. Vous écrivez des nombres au format binaire dans un fichier texte : ce n'est pas valide.
-Soit vous utilisez le format PGM P2 et vous écrivez les valeurs en texte au format décimal '0 255 0 255' ... par exemple
-Soit vous utilisez le format PGM P5 et vous écrivez les valeurs en binaire (une valeur par octet, pas du format texte)*
-
-*Code : ok pour l'algorithme, par contre on privilégie la séparation de l'algo et des entrées/sorties. Vos fonctions devraient prendre en paramètre des objets Image, pas des noms de fichiers. C'est un principe général en programmation, on voudrait pouvoir réutiliser la fonction médian sur d'autres types d'images. Votre fonction est liée avec des opérations bas niveau liées au format d'image. Il faut toujours essayer de séparer au maximum les entrées/sorties (contrôleur) du reste (couches métier).*
+| <img  src ="./img/grumpy_impuls_15.png"  style =" width:300px; "/> | <img  src ="./img/grumpy_impuls_15_median_3.png"  style =" width:300px; "/> | <img  src ="./img/grumpy_impuls_15_median_7.png"  style =" width:300px; "/> |
 
 &nbsp;
 _____________________
@@ -68,7 +62,7 @@ Le résultat donné par notre fonction de bruit impulsionnel se trouve ci-dessou
 
 | Image originale | Bruit impulsionnel de 15% | Bruit impulsionnel de 40% |
 |:-----------:|:------------:|:---------------:|
-| <img  src ="./images/grumpy.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_15.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_impuls_40.png"  style =" width:300px; "/> |
+| <img  src ="./img/grumpy.png"  style =" width:300px; "/> | <img  src ="./img/grumpy_impuls_15.png"  style =" width:300px; "/> | <img  src ="./img/grumpy_impuls_40.png"  style =" width:300px; "/> |
 
 &nbsp;
 
@@ -107,9 +101,7 @@ Le résultat donné par notre fonction de bruit gaussien se trouve ci-dessous.
 
 | Image originale | Bruit gaussien de moyenne μ=0 et d'écart-type σ=15 | Bruit gaussien de moyenne μ=0 et d'écart-type σ=30 |
 |:------:|:---------:|:----------:|
-| <img  src ="./images/grumpy.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_gauss_mu0_sigma15.png"  style =" width:300px; "/> | <img  src ="./images/grumpy_gauss_mu0_sigma30.png"  style =" width:300px; "/> |
-
-*Note : les doubles boucles ne sont pas utiles ici, on n'a pas besoin des deux coordonnées i et j. Une boucle sur l'indice ou offset du pixel serait suffisante*
+| <img  src ="./img/grumpy.png"  style =" width:300px; "/> | <img  src ="./img/grumpy_gauss_mu0_sigma15.png"  style =" width:300px; "/> | <img  src ="./img/grumpy_gauss_mu0_sigma30.png"  style =" width:300px; "/> |
 
 &nbsp;
 _____________________
@@ -125,10 +117,6 @@ On y parcourt chaque pixel de l'image à l'aide d'une double boucle (i et j). Pu
      mse += pow(image(i,j) - image_sortie(i,j),2);
 
 Enfin, on divise le résultat par le nombre de pixels que contiennent nos images et on affiche le résultat sur la console.
-
-*Note : comme précédemment la double boucle n'est pas utile (mais pas incorrecte)
-L'utilisation de la fonction `pow`est à proscrire pour le calcul d'un carré (pour des raisons d'efficacité)*
-
 
 &nbsp;
 _____________________
@@ -154,10 +142,10 @@ En premier lieu, voici des tableaux récapitulant toutes les images générées 
 
 |  | Image bruitée | Image débruitée : taille 3 | Image débruitée : taille 7 |
 |:--:|:--:|:--:|:--:|
-|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15.png) | ![img](./images/grumpy_impuls_15_median_3.png) | ![img](./images/grumpy_impuls_15_median_7.png)| 
-|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40.png) | ![img](./images/grumpy_impuls_40_median_3.png) | ![img](./images/grumpy_impuls_40_median_7.png) |
-|**Bruit gaussien σ=15**| ![img](./images/grumpy_gauss_mu0_sigma15.png) | ![img](./images/grumpy_gauss_mu0_sigma15_median_3.png) | ![img](./images/grumpy_gauss_mu0_sigma15_median_7.png) |
-|**Bruit gaussien σ=30**| ![img](./images/grumpy_gauss_mu0_sigma30.png) | ![img](./images/grumpy_gauss_mu0_sigma30_median_3.png) | ![img](./images/grumpy_gauss_mu0_sigma30_median_7.png) |
+|**Bruit impulsionnel 15%**| ![img](./img/grumpy_impuls_15.png) | ![img](./img/grumpy_impuls_15_median_3.png) | ![img](./img/grumpy_impuls_15_median_7.png)| 
+|**Bruit impulsionnel 40%**| ![img](./img/grumpy_impuls_40.png) | ![img](./img/grumpy_impuls_40_median_3.png) | ![img](./img/grumpy_impuls_40_median_7.png) |
+|**Bruit gaussien σ=15**| ![img](./img/grumpy_gauss_mu0_sigma15.png) | ![img](./img/grumpy_gauss_mu0_sigma15_median_3.png) | ![img](./img/grumpy_gauss_mu0_sigma15_median_7.png) |
+|**Bruit gaussien σ=30**| ![img](./img/grumpy_gauss_mu0_sigma30.png) | ![img](./img/grumpy_gauss_mu0_sigma30_median_3.png) | ![img](./img/grumpy_gauss_mu0_sigma30_median_7.png) |
 
 &nbsp;
 
@@ -165,10 +153,10 @@ En premier lieu, voici des tableaux récapitulant toutes les images générées 
 
 |  | Image bruitée | Image débruitée : taille 3 | Image débruitée : taille 7 |
 |:--:|:--:|:--:|:--:|
-|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15.png) | ![img](./images/grumpy_impuls_15_filtre_moyenneur_N3.png) |![img](./images/grumpy_impuls_15_filtre_moyenneur_N7.png) |
-|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40.png) | ![img](./images/grumpy_impuls_40_filtre_moyenneur_N3.png) |![img](./images/grumpy_impuls_40_filtre_moyenneur_N7.png) |
-|**Bruit gaussien σ=15**| ![img](./images/grumpy_gauss_mu0_sigma15.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_moyenneur_N3.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_moyenneur_N7.png) |
-|**Bruit gaussien σ=30**| ![img](./images/grumpy_gauss_mu0_sigma30.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_moyenneur_N3.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_moyenneur_N7.png) |
+|**Bruit impulsionnel 15%**| ![img](./img/grumpy_impuls_15.png) | ![img](./img/grumpy_impuls_15_filtre_moyenneur_N3.png) |![img](./img/grumpy_impuls_15_filtre_moyenneur_N7.png) |
+|**Bruit impulsionnel 40%**| ![img](./img/grumpy_impuls_40.png) | ![img](./img/grumpy_impuls_40_filtre_moyenneur_N3.png) |![img](./img/grumpy_impuls_40_filtre_moyenneur_N7.png) |
+|**Bruit gaussien σ=15**| ![img](./img/grumpy_gauss_mu0_sigma15.png) | ![img](./img/grumpy_gauss_mu0_sigma15_filtre_moyenneur_N3.png) | ![img](./img/grumpy_gauss_mu0_sigma15_filtre_moyenneur_N7.png) |
+|**Bruit gaussien σ=30**| ![img](./img/grumpy_gauss_mu0_sigma30.png) | ![img](./img/grumpy_gauss_mu0_sigma30_filtre_moyenneur_N3.png) | ![img](./img/grumpy_gauss_mu0_sigma30_filtre_moyenneur_N7.png) |
 
 &nbsp;
 
@@ -176,10 +164,10 @@ En premier lieu, voici des tableaux récapitulant toutes les images générées 
 
 |  | Image bruitée | Image débruitée : σ=1 | Image débruitée : σ=2 |
 |:--:|:--:|:--:|:--:|
-|**Bruit impulsionnel 15%**| ![img](./images/grumpy_impuls_15.png) | ![img](./images/grumpy_impuls_15_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_impuls_15_filtre_gauss_sigma_2.png) |
-|**Bruit impulsionnel 40%**| ![img](./images/grumpy_impuls_40.png) | ![img](./images/grumpy_impuls_40_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_impuls_40_filtre_gauss_sigma_2.png) |
-|**Bruit gaussien σ=15**| ![img](./images/grumpy_gauss_mu0_sigma15.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_gauss_mu0_sigma15_filtre_gauss_sigma_2.png) |
-|**Bruit gaussien σ=30**| ![img](./images/grumpy_gauss_mu0_sigma30.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_gauss_sigma_1.png) | ![img](./images/grumpy_gauss_mu0_sigma30_filtre_gauss_sigma_2.png) |
+|**Bruit impulsionnel 15%**| ![img](./img/grumpy_impuls_15.png) | ![img](./img/grumpy_impuls_15_filtre_gauss_sigma_1.png) | ![img](./img/grumpy_impuls_15_filtre_gauss_sigma_2.png) |
+|**Bruit impulsionnel 40%**| ![img](./img/grumpy_impuls_40.png) | ![img](./img/grumpy_impuls_40_filtre_gauss_sigma_1.png) | ![img](./img/grumpy_impuls_40_filtre_gauss_sigma_2.png) |
+|**Bruit gaussien σ=15**| ![img](./img/grumpy_gauss_mu0_sigma15.png) | ![img](./img/grumpy_gauss_mu0_sigma15_filtre_gauss_sigma_1.png) | ![img](./img/grumpy_gauss_mu0_sigma15_filtre_gauss_sigma_2.png) |
+|**Bruit gaussien σ=30**| ![img](./img/grumpy_gauss_mu0_sigma30.png) | ![img](./img/grumpy_gauss_mu0_sigma30_filtre_gauss_sigma_1.png) | ![img](./img/grumpy_gauss_mu0_sigma30_filtre_gauss_sigma_2.png) |
 
 &nbsp;
 
@@ -193,6 +181,3 @@ Enfin voici le tableau des différents MSE représentant la disparité de chaque
 | **Bruit impulsionnel 40%** | 8424 | 1041 | **164** | 1624 | 1013 | 1404 | 1001 |
 | **Bruit gaussien σ=15**    | 222  | 99   | 142 | 93   | 184  | **82**   | 149  |
 | **Bruit gaussien σ=30**    | 830  | 216  | 171 | 161  | 198  | **133**  | 164  |
-
-*Note : bon rapport, code correct (à part la lecture/écriture pgm dans les fonctions)
-Vous auriez pu commenter un peu plus les résultats et ajouter plus d'images de tests, notamment pour les cas limites.*
