@@ -12,7 +12,7 @@ Dans une image 2D on peut considérer deux types d'adjacences : la 4- et la 8-ad
 
 Image binaire |      Image des bords
 :--------------:|:-----------------:
-![](img/grumpy_t.png)|![](img/grumpy_border.png)
+![](./img/grumpy_t.png)|![](./img/grumpy_border.png)
 
 Description :
 
@@ -44,21 +44,21 @@ On va implémenter les quatre opérateurs de base de la morphologie mathématiqu
 
 Image binaire |      Dilatation par un disque de rayon 1 (4-adjacence)
 :--------------:|:-----------------:
-![](img/grumpy_t.png)|![](img/grumpy_dil.png)
+![](./img/grumpy_t.png)|![](./img/grumpy_dil.png)
 
 Image binaire |      Erosion par un disque de rayon 1 (4-adjacence)
 :--------------:|:-----------------:
-![](img/grumpy_t.png)|![](img/grumpy_ero.png)
+![](./img/grumpy_t.png)|![](./img/grumpy_ero.png)
 
 
 Image binaire |      Ouverture par un disque de rayon 1 (4-adjacence)
 :--------------:|:-----------------:
-![](img/grumpy_t.png)|![](img/grumpy_open.png)
+![](./img/grumpy_t.png)|![](./img/grumpy_open.png)
 
 
 Image binaire |      Fermeture par un disque de rayon 1 (4-adjacence)
 :--------------:|:-----------------:
-![](img/grumpy_t.png)|![](img/grumpy_close.png)
+![](./img/grumpy_t.png)|![](./img/grumpy_close.png)
 
 
 ### Programmes à réaliser 

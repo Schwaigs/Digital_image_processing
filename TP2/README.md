@@ -17,7 +17,7 @@ Soit une image $`f:E \rightarrow V`$ et un seuil $`s`$. On considère les deux c
 
 Image originale |      Image seuillée (s=110)
 :--------------:|:-----------------:
-![](img/grumpy.png)|![](img/grumpy-thres.png)
+![](./img/grumpy.png)|![](./img/grumpy-thres.png)
 
 En blanc : les points de $`X_{fg}`$, en noir : ceux de $`X_{bg}`$.
 
@@ -111,7 +111,7 @@ otsu input.pgm output.pgm
 
 Image originale |      Image seuillée (k=...)
 :--------------:|:-----------------:
-![](img/grumpy.png)|![](img/grumpy-thres.png)
+![](./img/grumpy.png)|![](./img/grumpy-thres.png)
 
 Description :
 

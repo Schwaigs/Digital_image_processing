@@ -43,7 +43,7 @@ convert input.jpg input.pgm
 
 Image originale |      Image seuillée (t=110)
 :--------------:|:-----------------:
-![](img/grumpy.png)|![](img/grumpy-thres.png)
+![](./img/grumpy.png)|![](./img/grumpy-thres.png)
 
 Description :
 - `threshold`: Effectue le seuillage d'une image à niveaux de gris.
@@ -67,7 +67,7 @@ threshold input.pgm output.pgm 110
 
 Image originale |      Négatif
 :--------------:|:-----------------:
-![](img/grumpy.png)|![](img/grumpy-neg.png)
+![](./img/grumpy.png)|![](./img/grumpy-neg.png)
 
 
 Description : 
@@ -121,17 +121,17 @@ compute_histo input.pgm | ../plotHisto.py
 ```
 
 
-Image  | ![](img/grumpy.png)
+Image  | ![](./img/grumpy.png)
 :--------------:|:-----------------:
-Histogramme |![](img/histo.png)    
+Histogramme |![](./img/histo.png)    
 
 
 
 ### Étirement de contraste
 
-Image originale |   ![](img/renardeaux.png)   
+Image originale |   ![](./img/renardeaux.png)   
 :--------------:|:-----------------:
- Étirement de contraste (min=0, max=255) |![](img/renardeaux-norm.png)
+ Étirement de contraste (min=0, max=255) |![](./img/renardeaux-norm.png)
 
 
 Description :
@@ -156,9 +156,9 @@ Afficher l'histogramme avant et après étirement de contraste.
 
 ### Égalisation d'histogramme
 
-Image originale |   ![](img/islande_s.png)
+Image originale |   ![](./img/islande_s.png)
 :--------------:|:-----------------:
-Égalisation d'histogramme | ![](img/islande_s_eq.png)
+Égalisation d'histogramme | ![](./img/islande_s_eq.png)
 
 
 Description :
